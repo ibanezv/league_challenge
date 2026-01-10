@@ -39,9 +39,9 @@ This project has 4 Domain layer :
 
 ## Send request
 ```
-curl -F 'file=@/path/file.csv' "localhost:8080/echo"
-curl -F 'file=@/path/file.csv' "localhost:8080/flatten"
-curl -F 'file=@/path/file.csv' "localhost:8080/invert"
-curl -F 'file=@/path/file.csv' "localhost:8080/multiply"
-curl -F 'file=@/path/file.csv' "localhost:8080/sum"
+curl -F 'file=@/path/file.csv' "localhost:8080/api/v1/echo"
+curl -F 'file=@/path/file.csv' "localhost:8080/api/v1/flatten"
+curl -F 'file=@/path/file.csv' "localhost:8080/api/v1/invert"
+curl -F 'file=@/path/file.csv' "localhost:8080/api/v1/multiply"
+curl -F 'file=@/path/file.csv' "localhost:8080/api/v1/sum"
 ```

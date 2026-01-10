@@ -1,35 +1,17 @@
 package main
 
-import "github.com/ibanezv/league_challenge/internal/server"
+import (
+	_ "github.com/league/league_challenge/cmd/docs"
 
-// Run with
-//		go run .
-// Send request with:
-//		curl -F 'file=@/path/matrix.csv' "localhost:8080/echo"
+	"github.com/league/league_challenge/internal/server"
+)
 
-/* func main() {
-	http.HandleFunc("/echo", func(w http.ResponseWriter, r *http.Request) {
-		file, _, err := r.FormFile("file")
-		if err != nil {
-			w.Write([]byte(fmt.Sprintf("error %s", err.Error())))
-			return
-		}
-		defer file.Close()
-		records, err := csv.NewReader(file).ReadAll()
-		if err != nil {
-			w.Write([]byte(fmt.Sprintf("error %s", err.Error())))
-			return
-		}
-		var response string
-		for _, row := range records {
-			response = fmt.Sprintf("%s%s\n", response, strings.Join(row, ","))
-		}
-		fmt.Fprint(w, response)
-	})
-	http.ListenAndServe(":8080", nil)
-
-} */
-
+// @title League Code Challenge
+// @version 1.0
+// @description Leagge Code Challenge.
+// @host localhost:8080
+// @BasePath /api/v1
+// @schemes http
 func main() {
 	server.InitServer()
 }

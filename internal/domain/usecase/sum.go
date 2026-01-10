@@ -4,7 +4,7 @@ package usecase
 import (
 	"context"
 
-	"github.com/ibanezv/league_challenge/internal/domain"
+	"github.com/league/league_challenge/internal/domain"
 )
 
 type sum struct {

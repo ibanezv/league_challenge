@@ -9,6 +9,8 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
+const separator = ','
+
 func readRequest(ctx *fiber.Ctx) ([][]string, error) {
 	file, err := ctx.FormFile("file")
 	if err != nil {
@@ -21,7 +23,9 @@ func readRequest(ctx *fiber.Ctx) ([][]string, error) {
 	}
 	defer uploadedFile.Close()
 
-	records, err := csv.NewReader(uploadedFile).ReadAll()
+	reader := csv.NewReader(uploadedFile)
+	reader.Comma = separator
+	records, err := reader.ReadAll()
 	if err != nil {
 		return nil, ErrBadFileInput
 	}

@@ -1,0 +1,151 @@
+{
+    "schemes": [
+        "http"
+    ],
+    "swagger": "2.0",
+    "info": {
+        "description": "Leagge Backend Code Challenge.",
+        "title": "League Backend Code Challenge",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/api/v1",
+    "paths": {
+        "/echo": {
+            "post": {
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "formData",
+                        "description": "Select a CSV file",
+                        "required": true,
+                        "type": "file"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "BAD REQUEST"
+                    },
+                    "500": {
+                        "description": "INTERNAL SERVER ERROR"
+                    }
+                }
+            }
+        },
+        "/flatten": {
+            "post": {
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "formData",
+                        "description": "Select a CSV file",
+                        "required": true,
+                        "type": "file"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "BAD REQUEST"
+                    },
+                    "500": {
+                        "description": "INTERNAL SERVER ERROR"
+                    }
+                }
+            }
+        },
+        "/invert": {
+            "post": {
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "formData",
+                        "description": "Select a CSV file",
+                        "required": true,
+                        "type": "file"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "BAD REQUEST"
+                    },
+                    "500": {
+                        "description": "INTERNAL SERVER ERROR"
+                    }
+                }
+            }
+        },
+        "/multiply": {
+            "post": {
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "formData",
+                        "description": "Select a CSV file",
+                        "required": true,
+                        "type": "file"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "BAD REQUEST"
+                    },
+                    "500": {
+                        "description": "INTERNAL SERVER ERROR"
+                    }
+                }
+            }
+        },
+        "/sum": {
+            "post": {
+                "consumes": [
+                    "multipart/form-data"
+                ],
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "formData",
+                        "description": "Select a CSV file",
+                        "required": true,
+                        "type": "file"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "BAD REQUEST"
+                    },
+                    "500": {
+                        "description": "INTERNAL SERVER ERROR"
+                    }
+                }
+            }
+        }
+    }
+}

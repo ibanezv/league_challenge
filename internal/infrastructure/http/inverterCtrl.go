@@ -3,7 +3,7 @@ package http
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"github.com/ibanezv/league_challenge/internal/domain"
+	"github.com/league/league_challenge/internal/domain"
 )
 
 type InvertController struct {

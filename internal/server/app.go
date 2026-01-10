@@ -5,9 +5,9 @@ import (
 	"context"
 	"log"
 
-	"github.com/ibanezv/league_challenge/internal/domain/usecase"
-	"github.com/ibanezv/league_challenge/internal/infrastructure/http"
-	"github.com/ibanezv/league_challenge/internal/server/infrastructure"
+	"github.com/league/league_challenge/internal/domain/usecase"
+	"github.com/league/league_challenge/internal/infrastructure/http"
+	"github.com/league/league_challenge/internal/server/infrastructure"
 	"go.uber.org/fx"
 )
 

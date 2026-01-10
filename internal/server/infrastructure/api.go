@@ -4,8 +4,9 @@ package infrastructure
 import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/recover"
-	"github.com/ibanezv/league_challenge/internal/infrastructure/http"
-	"github.com/ibanezv/league_challenge/internal/infrastructure/http/middleware"
+	"github.com/gofiber/swagger"
+	"github.com/league/league_challenge/internal/infrastructure/http"
+	"github.com/league/league_challenge/internal/infrastructure/http/middleware"
 )
 
 type AppServer struct {
@@ -17,17 +18,21 @@ type AppServer struct {
 }
 
 func (s *AppServer) Listen() error {
-	f := fiber.New()
+	api := fiber.New()
 
-	f.Use(recover.New())
+	api.Use(recover.New())
 
-	f.Post("/echo", middleware.ValidationMatrix, middleware.ValidationInput, s.echoController.Handler)
-	f.Post("/flatten", middleware.ValidationMatrix, s.flattenController.Handler)
-	f.Post("/invert", middleware.ValidationMatrix, s.invertController.Handler)
-	f.Post("/multiply", middleware.ValidationMatrix, s.multiplyController.Handler)
-	f.Post("/sum", middleware.ValidationMatrix, s.sumController.Handler)
+	group := api.Group("/api/v1")
+	// swagger
+	group.Get("/swagger/*", swagger.HandlerDefault)
 
-	return f.Listen(":8080")
+	group.Post("/echo", middleware.ValidationMatrix, s.echoController.Handler)
+	group.Post("/flatten", middleware.ValidationMatrix, s.flattenController.Handler)
+	group.Post("/invert", middleware.ValidationMatrix, s.invertController.Handler)
+	group.Post("/multiply", middleware.ValidationMatrix, middleware.ValidationInput, s.multiplyController.Handler)
+	group.Post("/sum", middleware.ValidationMatrix, middleware.ValidationInput, s.sumController.Handler)
+
+	return api.Listen(":8080")
 }
 
 func NewAppServer(
